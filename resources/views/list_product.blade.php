@@ -12,6 +12,7 @@
         <tr>
         <th>Product Name</th>
         <th>Category Name</th>
+        <th>Image </th>
         <th>Actions</th>
     </tr>
     @foreach ( $product as $products )
@@ -23,6 +24,7 @@
           <a href="/edit_productform/{{$products->id}}" ><button> Edit </button></a> &nbsp;
           <a href="/delete_product/{{$products->id}}"><button> Delete </button></a> &nbsp;
       </td>
+      <td><img src="{{asset('uploads/images/'.$products->image)}}" ></td>
     </tr>
     @endforeach
     </table>

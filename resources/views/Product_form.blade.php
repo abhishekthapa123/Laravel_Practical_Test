@@ -10,11 +10,11 @@
 
 <body>
     <h1> Add product </h1>
-    <form method="post" action="/addproduct">
+    <form method="post" action="/addproduct" enctype="multipart/form-data">
         @csrf
-        <label for="cars">Product Name</label>
+        <label>Product Name</label>
         <input type="text"  name="product_name"><br><br>
-        <label for="cars">Category</label>
+        <label >Category</label>
         <select name="category_id" id="cars">
             @foreach ( $category as $categories )
             <option value={{$categories->id}}>{{$categories->category_name}}</option> 
@@ -23,6 +23,8 @@
 
         </select>
         <br><br>
+        <label> Image</label>
+        <input type="file" name="image"><br><br>
         <input type="submit" value="Submit">
     </form>
     <a href="/listproduct"> List product</a>
